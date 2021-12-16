@@ -31,7 +31,7 @@ function Countdownlist({ setCountdown }) {
         }, 15000);
       }
     }, 1000);
-  }, []);
+  }, [setCountdown]);
   return (
     <div className="content">
       <div className="title">New Year</div>
