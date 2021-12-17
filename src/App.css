@@ -31,13 +31,12 @@ div .subTitle{
 @media screen and (min-width: 768px) {
   .container {
     height: 100vh;
-    min-width: 1024px;
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: center;
   }
   .content{
-    font-size: 150px;
+    font-size: 120px;
   }
   div .title{
   font-size: 80px;
