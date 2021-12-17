@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
-import '../App.css'
+import "../App.css";
+import Hope from "./Hope";
 
-function Countdownlist({ setCountdown }) {
+function Countdownlist({ setCountdown, countdown }) {
   const [time, setTime] = useState("");
+  const [newYear, setNewYear] = useState("New Year");
+  const [comingSoon, setComingSoon] = useState("Coming Soon");
   useEffect(() => {
     let countDownDate = new Date("Jan 1, 2022 00:00:00").getTime();
     // update every second
@@ -24,8 +27,10 @@ function Countdownlist({ setCountdown }) {
 
       if (distance < 0) {
         clearInterval(x);
-        setTime("Happy New Year 2022!");
+        setTime(<Hope/>);
         setCountdown(true);
+        setNewYear("");
+        setComingSoon("");
         setTimeout(() => {
           setCountdown(false);
         }, 15000);
@@ -34,8 +39,8 @@ function Countdownlist({ setCountdown }) {
   }, [setCountdown]);
   return (
     <div className="content">
-      <div className="title">New Year</div>
-      <div className="subTitle">Coming Soon</div>
+      <div className="title">{newYear}</div>
+      <div className="subTitle">{comingSoon}</div>
       <div>{time}</div>
     </div>
   );

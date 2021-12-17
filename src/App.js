@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="container">
       {countdown ? <Fireworks3 /> : null}
-      <Countdownlist setCountdown={setCountdown}/>
+      <Countdownlist setCountdown={setCountdown} countdown={countdown}/>
     </div>
   );
 }
